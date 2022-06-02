@@ -1,0 +1,24 @@
+{% extends 'mytweet/base.html'%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tweet</title>
+  <link rel="stylesheet" href="tweet_form.css">
+</head>
+<body>
+  
+<div class="createform" >
+    <form method="POST">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button class = "button" type = "submit">Tweet</button>
+
+    </form>
+</div>
+
+
+
+</body>
+</html>
+{%endblock content%}

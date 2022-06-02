@@ -1,0 +1,41 @@
+{% extends 'mytweet/base.html'%}
+{%block content%}
+<br><br>
+<div class= "container">
+<div class="jumbotron">
+  <h1 class="display-4">Hello, {{user.username}} <img src="{{user.profile.image.url}}" width="50" style="border-radius: 100%;"></h1>
+  <hr class="my-4">
+  <p>Create Tweet</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'Tweetcreate' %}" role="button">Create</a>
+  </p>
+</div>
+
+
+  {%for tweet in object_list%}
+    
+    <br><br><br>
+    <div class="card text-center">
+        <div class="card-header">
+            <a href="{% url 'profile' %}"><h4>{{tweet.uname}}</h4></a>
+            <p>{{tweet.datetime}}</p>
+            {% if tweet.uname == user  %}
+            <div class="btn-group1">
+              <a href="{% url 'Tweetupdate' tweet.id %}"><button class="btn btn-outline-info">Update</button></a>
+              <a href="{% url 'Tweetdelete' tweet.id %}"><button class="btn btn-outline-info">Delete</button></a>
+              </div>
+              {% endif %}
+        </div>
+        <div class="card-body">
+          <p class="card-text"><h5>{{tweet.photo}}</h5></p>
+          <p class="card-text"><h5>{{tweet.text}}</h5></p>
+        </div>
+
+     
+      </div>
+<br>
+  {% endfor %}
+</div>
+{%endblock content%}
+
+

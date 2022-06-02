@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>tweet</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script>
+Body {
+font-family: Calibri, Helvetica, sans-serif;
+background-color: #1da1f2;
+	}
+</script>
+</head>
+<body>
+    
+    <br><br><br><br><br><br>
+    <h2 align="center" style="color :blue">MyTweet</h2>
+    <br><br>
+    <div class="container">
+          <h4>Logged out!!</h4>  
+        <a href="{%url 'login'%}"><p>Click here to login</p></a>
+        
+    
+      
+    </div>
+    {%if messages%}
+    
+        {%for message in messages%}
+            {{message}}
+        {%endfor%}
+    {%endif%}
+</body>
+</html>

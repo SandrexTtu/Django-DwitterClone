@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+        body{
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          background: #1da1f2;
+        }
+        .createform{
+          display: flex;
+          justify-content: center;
+        }
+        .button{
+          background-color: white;
+        }
